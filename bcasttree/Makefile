@@ -1,12 +1,12 @@
 CC = mpicc
 CFLAGS = -W -Wall 
 
-PRGNAME = pimc
+PRGNAME = bcast
 
-OBJ = pimc.o \
-      sequential.o
+OBJ = main.o \
+	bcast.o
 
-all: $(PRGNAME) 
+all: $(PRGNAME) $(PRGNAME2)
 
 $(PRGNAME) : $(OBJ)
 	$(CC) -o $@ $(OBJ) -lm
@@ -14,5 +14,5 @@ $(PRGNAME) : $(OBJ)
 clean:
 	rm -f $(OBJ) $(PRGNAME) core*
 
-pimc.o: func.h
-sequential.o: func.h
+main.o: funcinc.h
+bcast.o: funcinc.h

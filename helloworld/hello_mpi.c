@@ -1,6 +1,6 @@
-# include " stdio .h"
-# include <stdlib .h>
-# include <mpi .h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <mpi.h>
 
 int main (int argc , char * argv [])
 {
@@ -28,7 +28,8 @@ int main (int argc , char * argv [])
   gethostname ( cpu_name ,80) ;
   printf (" hello MPI user : from process = %i on machine =%s, of NCPU =%i processes \n",
       tid , cpu_name , nthreads );
+
   MPI_Finalize ();
   
-  return (0) ;
+  return (0);
 }
